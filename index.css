@@ -1,0 +1,392 @@
+body{
+    background-image: url('fondoPag1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    animation: cambiarImagen 21s infinite;
+}
+/* animacion de cambio de fondo */
+@keyframes cambiarImagen {
+    0%{
+        background-image: url('fondoPag1.jpg');
+    }
+    33%{
+        background-image: url('fondoPag2.jpg');
+    }
+    66%{
+        background-image: url('fondoPag3.jpg');
+    }
+    100%{
+        background-image: url('fondoPag1.jpg');
+    }
+}
+body::after {
+    content: '';
+    display: none;
+    background-image: url('fondoPag1.jpg');
+    background-image: url('fondoPag2.jpg');
+    background-image: url('fondoPag3.jpg');
+  }
+/* div primario donde se encuentra la imagen y el nombre de la cuenta de instagram */
+#titulo{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+/* div secundario de la imagen y nombre de la cuenta de instagram */
+#titulo div{
+    margin: 0;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    border-radius: 20px;
+
+}
+/* logo de la cuenta de instagram */
+#titulo img{
+    width: 300px;
+    margin: 0;
+    float: left;
+    margin-left: 0;
+
+}
+/* animacion del logo de instagram */
+.amplificar{
+    width: 0;
+    animation: aparecerImagen 4s forwards;
+}
+@keyframes aparecerImagen {
+    from {
+      width: 0;
+    }
+    to {
+      width: 20%; /* Anima el ancho para mostrar la imagen gradualmente ¨*/
+
+    }
+}
+
+/* nombre de la cuenta de instagram */
+#titulo h1{
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to top, #ff0019, #ff03d5);
+    font-size: 90px;
+    padding-top: 6px;
+    padding-right: 50px;
+    margin-right: 0;
+    font-family: 'Nosifer', sans-serif;
+}
+/* animacion de rebote para el nombre de la cuenta */
+.rebote{
+    animation: reboteTexto 8s ease infinite;
+}
+@keyframes reboteTexto {
+    0%, 20% {
+      transform: translateY(-200%); /* Mantiene el texto arriba del contenedor en estos puntos */
+    }
+    50% {
+        transform: translateY(-60%);
+    }
+    40%, 60% {
+      transform: translateY(0%); /* Hace que el texto aparezca al centro */
+    }
+    80% {
+        transform: translateY(-30%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+  }
+
+/* div del texto de agradecimiento */
+#agradecimiento{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+/* texto: gracias a todos por seguirme en instagram */
+#agradecimiento p{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-left: 9px;
+    padding-right: 9px;
+    background: #ffffff;
+    margin: 10px;
+}
+
+/* div de la descripcion */
+#descripcion{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+/* Imagen que esta al lado de la descripcion */
+#descripcion img{
+    width: 150px;
+    animation: aparecerImagen2 5s infinite;
+}
+/* animacion de la imagen al lado de la descripcion */
+@keyframes aparecerImagen2 {
+    from {
+      width: 0;
+    }
+    to {
+      width: 9%; /* Anima el ancho para mostrar la imagen gradualmente ¨*/
+
+    }
+}
+/* descripcion */
+#descripcion p{
+    background-color: rgb(255, 0, 187);
+    color: #1604bb;
+    font-family: 'Courgette', cursive;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    animation: cambiarColores 15s infinite;
+
+}
+
+/* div del titulo de recomendacion de cursos */
+#tRecomendado{
+    display: flex;
+    justify-content:center;
+    text-align: center;
+}
+/*  texto: Cursos recomendados de programacion*/
+#tRecomendado h4{
+    font-size: 55px;
+    font-family: 'Francois One', sans-serif;
+    text-transform: uppercase;
+    background-color: rgb(0, 0, 0);
+    margin: 0;
+    color: #ffffff;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+}
+/*animacion para que aparezca el texto como si estuviera escribiendose */
+.aparecer{
+    animation: aparecerTexto 6s steps(70, end) infinite;
+}
+@keyframes aparecerTexto {
+    from{
+        width: 0;
+    }
+    to {
+      width: 70%;
+    }
+    70%{
+        width: 70%;
+    }
+    70%{
+        width: 70%;
+    }
+}
+/* div maestro de cursos gratuitos y de pago */
+.main{
+    margin-top: 13px;
+    display: flex;
+    justify-content: center;
+}
+/* segundo div para dividir entre gratuitos y de pago */
+.contenedor{
+    display: inline-block;
+    width: 40%;
+    text-align: center;
+    margin: 10px;
+}
+/* div con referencia a cursos de pago o gratuito aplicando fondo y aliniando texto */
+.contenedor div{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+/* div de los titulos de que curso es */
+.dtitulo{
+    background-color: #000000;
+    border-radius: 10px;
+}
+/* titulo de curso de pago y curso gratuito */
+.dtitulo h5{
+    font-family: 'Concert One', sans-serif;
+    font-size: 70px;
+    margin: 0;
+    color: rgb(255, 0, 187);
+}
+/* invocacion a animacion del titulo curso de pago */
+.derecha{
+    transform: translateX(100%);
+    animation: aparecerD 6s ease infinite;
+}
+/* animacion */
+@keyframes aparecerD {
+    to {
+        transform: translateX(0);
+    }
+  }
+/* invocion de animacion de titulo curso gratuito  */
+.izquierda{
+    transform: translateX(-100%);
+    animation: aparecerD 6s ease infinite;
+}
+/* div maestro donde estan todos los cursos de cada rama */
+.cursos{
+    width: 100%; /* Ajusta el ancho del contenedor maestro */
+    height: 900px; /* Ajusta la altura del contenedor maestro según el tamaño de las imágenes */
+    overflow: hidden; /* Oculta el contenido que se sale del contenedor maestro */
+    position: relative;
+}
+/* parrafo de todos los cursos */
+.curso p{
+    color: #ffffff;
+    font-size: 40px;
+    bottom: 0;
+}
+/* div de todos los cursos */
+.curso{
+    width: 100%; /* Ajusta el ancho de los divs secundarios */
+    height: 100%; /* Ajusta la altura de los divs secundarios */
+    display: block; /* Inicialmente, oculta los divs secundarios */
+    position: absolute; /* Establece una posición absoluta para los divs secundarios */
+    animation: mostrarDivs 21s linear infinite; /* Define una animación */
+    opacity: 0;
+}
+/* curso 3 */
+.c3 {
+    background-color: yellow;
+    animation-delay: 0s; /* Inicia la animación del primer div de inmediato */
+  }
+/* curso 2 */
+.c2 {
+    background-color: turquoise;
+    animation-delay: 7s; /* Inicia la animación del segundo div después de 2 segundos */
+  }
+/* curso 1 */
+.c1 {
+    background-color: aqua;
+    animation-delay: 14s; /* Inicia la animación del tercer div después de 4 segundos */
+  }
+/* imagenes de todos los cursos */
+.curso img{
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 10px;
+}
+/* animacion de todos los cursos  */
+@keyframes mostrarDivs {
+    0% {
+      left: -100%; /* Inicialmente, los divs están fuera del contenedor maestro hacia la izquierda */
+    }
+    16% {
+      left: -50; /* Muestra el primer div */
+      opacity: 1;
+    }
+
+    33% {
+        left: 0; /* Muestra el primer div */
+        opacity: 1;
+      }
+
+    49% {
+        left: 50; /* Muestra el primer div */
+        opacity: 1;
+      }
+    65% {
+      left: 100%; /* Muestra el segundo div */
+      opacity: 1;
+    }
+    81% {
+        left: 150%; /* Muestra el segundo div */
+        opacity: 1;
+      }
+    100% {
+      left: 200%; /* Muestra el tercer div */
+      opacity: 0;
+    }
+  }
+
+
+/* textos finales de la pagina */
+.final{
+    margin-top: 20px;
+    background-color: rgb(255, 0, 187);
+    text-align: center;
+    margin-bottom: 20px;
+    animation: cambiarColores 15s infinite;
+}
+.final h6{
+    margin: auto;
+    font-size: 23px;
+    color: #1604bb;
+}
+@keyframes cambiarColores {
+    0%, 100% {
+      background-color: rgb(0, 0, 0); /* Color de fondo inicial */
+      
+    }
+    5%,95% {
+      background-color: #212121; /* Nuevo color de fondo a la mitad de la animación */
+      
+    }
+    10%,90% {
+      background-color: #424242; /* Nuevo color de fondo a la mitad de la animación */
+      
+    }
+    15%,85% {
+        background-color: #616161; /* Nuevo color de fondo a la mitad de la animación */
+        
+      }
+    20%,80% {
+        background-color: #757575; /* Nuevo color de fondo a la mitad de la animación */
+        
+    }
+    25%,75% {
+      background-color: #9e9e9e; /* Nuevo color de fondo a la mitad de la animación */
+      
+    }
+    30%,70% {
+        background-color: #bdbdbd; /* Nuevo color de fondo a la mitad de la animación */
+        
+      }
+    35%,65% {
+        background-color: #e0e0e0; /* Nuevo color de fondo a la mitad de la animación */
+        
+    }
+    40%,60% {
+        background-color: #eeeeee; /* Nuevo color de fondo a la mitad de la animación */
+        
+    }
+    45%, 55% {
+      background-color: #f5f5f5; /* Nuevo color de fondo a la mitad de la animación */
+      
+    }
+    48%,53% {
+        background-color: #fafafa; /* Nuevo color de fondo a la mitad de la animación */
+        
+      }
+    50% {
+        background-color: #ffffff; /* Nuevo color de fondo a la mitad de la animación */
+        
+    }
+    
+
+  }
+  .final a{
+    font-size: 45px;
+    color: rgb(255, 0, 187);
+    font-weight: bold;
+  }
